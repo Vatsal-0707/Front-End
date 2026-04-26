@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Destination Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="details-container">
+
+  <img id="dImg" class="details-img">
+
+  <h1 id="dName"></h1>
+
+  <p id="dDesc"></p>
+
+  <h3 id="dCost"></h3>
+  <h3 id="dRating"></h3>
+
+  <!-- HIGHLIGHTS -->
+  <h2>✨ Highlights</h2>
+  <ul class="highlights">
+    <li>🏖 Beautiful Views</li>
+    <li>🍴 Famous Food</li>
+    <li>🎉 Nightlife & Activities</li>
+    <li>📸 Great for Photography</li>
+  </ul>
+
+  <!-- MAP -->
+  <h2>📍 Location</h2>
+  <iframe id="dMap" class="map"></iframe>
+
+  <!-- ACTION BUTTONS -->
+  <div class="details-actions">
+    <button onclick="addToCartFromDetails()">❤️ Add to Trip</button>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
