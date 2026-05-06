@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="details-container">
+
+  <!-- HERO -->
+  <div class="details-hero">
+    <img id="dImg">
+
+    <div class="overlay">
+      <h1 id="dName"></h1>
+      <p id="dDesc"></p>
+    </div>
+  </div>
+
+  <!-- GRID INFO -->
+  <div class="details-info">
+
+    <!-- OVERVIEW -->
+    <div class="info-card">
+      <h2>📍 Trip Overview</h2>
+      <p id="dCost"></p>
+      <p id="dRating"></p>
+      <p>🗓 Best Time: Oct – Mar</p>
+      <p>⏱ Duration: 3–5 Days</p>
+      <p>👨‍👩‍👧 Ideal For: Family, Couples</p>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <div class="info-card">
+      <h2>✨ Highlights</h2>
+      <ul>
+        <li>🏔 Scenic Views</li>
+        <li>🍲 Local Food</li>
+        <li>🎯 Adventure</li>
+        <li>📸 Photography</li>
+      </ul>
+    </div>
+
+    <!-- COST -->
+    <div class="info-card">
+      <h2>💰 Cost Breakdown</h2>
+      <p>🏨 Hotel: ₹4000</p>
+      <p>🍽 Food: ₹2000</p>
+      <p>🚕 Transport: ₹3000</p>
+      <p>🎟 Activities: ₹1000</p>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <h2>🗺 Location</h2>
+    <iframe id="dMap" class="map"></iframe>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="details-actions">
+    <button onclick="addToCartFromDetails()">❤️ Add to Trip</button>
+    <button onclick="openBooking()">💳 Book Now</button>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

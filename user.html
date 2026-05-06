@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TravelX</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <h2>🌍 TravelX</h2>
+  <p id="welcomeUser"></p>
+
+  <button onclick="scrollToSection('destinations'); toggleSidebar()">🌍 Explore</button>
+  <button onclick="scrollToSection('planner'); toggleSidebar()">✈️ Plan Trip</button>
+  <button onclick="scrollToSection('cartSection'); toggleSidebar()">🛒 My Trip</button>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+<!-- HERO -->
+<div class="hero-premium">
+  <div class="hero-box">
+    <h1>Discover Your Next Journey ✈️</h1>
+    <p>Plan smarter, travel better with TravelX</p>
+
+    <input id="searchBox" placeholder="Search destinations..." onkeyup="loadDestinations()">
+
+    <div class="hero-actions">
+      <button onclick="scrollToSection('destinations')">Explore</button>
+      <button onclick="scrollToSection('planner')">Plan Trip</button>
+    </div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="container">
+
+<input id="searchBox2" placeholder="Search destination">
+
+<select id="categoryFilter">
+  <option value="">All</option>
+  <option value="beach">Beach</option>
+  <option value="mountain">Mountain</option>
+  <option value="city">City</option>
+</select>
+
+<input id="budgetFilter" placeholder="Max Budget">
+
+<button onclick="sortByPrice()">💰 Low to High</button>
+<button onclick="sortByRating()">⭐ Top Rated</button>
+
+</div>
+
+<h2>🧾 Your Trips</h2>
+<div id="myTrips" class="grid"></div>
+
+<!-- DESTINATIONS -->
+<h2 id="destinations">🔥 Trending Destinations</h2>
+<div id="destList" class="grid"></div>
+
+<!-- TRIP PLANNER -->
+<div class="planner-premium">
+
+  <h2><i class="fas fa-plane-departure"></i> Plan Your Dream Trip</h2>
+
+  <p>Create and manage your trip in seconds ✨</p>
+
+  <form id="tripForm" class="planner-form">
+
+    <input id="tripName" placeholder="Enter Trip Name">
+
+    <input id="budget" placeholder="Enter Budget (₹)">
+    <button type="submit">Create Trip 🚀</button>
+
+  </form>
+
+</div>
+
+<canvas id="chart"></canvas>
+
+<!-- CART -->
+<div class="trip-box" id="cartSection">
+
+<h2><i class="fas fa-shopping-cart"></i> My Trip</h2>
+
+<div id="cartList" class="grid"></div>
+
+<h3>Total Cost: <span id="cartTotal">₹0</span></h3>
+
+<button onclick="openBooking()">💳 Book Now</button>
+
+</div>
+
+<!-- ITINERARY -->
+<div class="itinerary-box">
+
+<h2><i class="fas fa-calendar-alt"></i> Trip Itinerary</h2>
+
+<textarea id="itinerary" placeholder="Write your travel plan..."></textarea>
+
+<div class="itinerary-buttons">
+  <button onclick="savePlan()">💾 Save</button>
+  <button onclick="loadPlan()">📂 Load</button>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal()" class="close">&times;</span>
+    <img id="modalImg" class="img">
+    <h2 id="modalName"></h2>
+    <p id="modalDesc"></p>
+    <p id="modalCost"></p>
+    <p id="modalRating"></p>
+    <button onclick="addFromModal()">❤️ Add to Trip</button>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeBooking()" class="close">&times;</span>
+
+    <h2>💳 Payment</h2>
+
+    <input placeholder="Card Number">
+    <input placeholder="Expiry Date">
+    <input placeholder="CVV">
+
+    <button onclick="confirmBooking()">Pay Now</button>
+  </div>
+</div>
+
+<div class="footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-box">
+      <h3>🌍 TravelX</h3>
+      <p>
+        TravelX helps you explore destinations, plan trips, and travel smarter.
+        Designed for a smooth and modern travel experience.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <p onclick="scrollToSection('destinations')">Explore</p>
+      <p onclick="scrollToSection('planner')">Plan Trip</p>
+      <p onclick="scrollToSection('cartSection')">My Trip</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>📧 support@travelx.com</p>
+      <p>📞 +91 6969696969</p>
+      <p>📍 India</p>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <p class="footer-bottom">© 2026 TravelX. All Rights Reserved.</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
